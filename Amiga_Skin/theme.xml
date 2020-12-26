@@ -1,0 +1,83 @@
+<!DOCTYPE Theme PUBLIC "-//VideoLAN//DTD VLC Skins V2.0//EN" "skin.dtd">
+<Theme version="2.0">
+  <ThemeInfo name="Amiga Skin" author="emarti" email="dtemarti@gmail.com" webpage="https://github.com/emartisoft"/>
+
+  <!-- Created using the VLC Skin Editor 0.8.5.dev (http://www.videolan.org/vlc/skineditor.html)-->
+
+  <Font id="topaz" file="fonts/AmigaTopazTurkish.ttf" size="11"/>
+  <Bitmap id="main_top" file="main/top.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_top_left" file="main/top_left.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_top_right" file="main/top_right.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_bottom" file="main/bottom.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_bottom_left" file="main/bottom_left.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_bottom_right" file="main/bottom_right.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_left" file="main/left.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_right" file="main/right.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_btn_play" file="main/btn_play.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_btn_pause" file="main/btn_pause.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_btn_stop" file="main/btn_stop.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_btn_open" file="main/btn_open.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_sld_time" file="main/sld_time.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_backVideo" file="main\backVideo.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_separe" file="main\separe.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_top_left_down" file="main\top_left_down.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_bAot" file="main\bAot.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_bAot_down" file="main\bAot_down.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_bMax" file="main\bMax.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_bMax_down" file="main\bMax_down.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_bMin" file="main\bMin.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_bMin_down" file="main\bMin_down.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_sld_time_back" file="main\sld_time_back.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_volume" file="main\volume.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_sld_volume_back" file="main\sld_volume_back.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_binfo" file="main\binfo.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_binfo_down" file="main\binfo_down.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_about" file="main\about.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_bOk" file="main\bOk.png" alphacolor="#FF00FF"/>
+  <Bitmap id="main_bOk_down" file="main\bOk_down.png" alphacolor="#FF00FF"/>
+
+  <Window id="amigaplayer" x="200" y="200">
+    <Layout id="AmigaLayout" width="447" height="287" minwidth="447" maxwidth="99999" minheight="35" maxheight="99999">
+      <Group id="Amiga">
+        <Image id="LT" image="main_top_left" action="move"/>
+        <Image id="topEdge" x="25" image="main_top" action="move" rightbottom="righttop"/>
+        <Image id="RT" x="376" image="main_top_right" action="move" lefttop="righttop" rightbottom="righttop"/>
+        <Image id="LeftEdge" y="15" image="main_left" action="move" rightbottom="leftbottom"/>
+        <Image id="RightEdge" x="443" y="15" image="main_right" action="move" lefttop="righttop" rightbottom="rightbottom"/>
+        <Image id="LB" y="268" image="main_bottom_left" action="move" lefttop="leftbottom" rightbottom="leftbottom"/>
+        <Image id="BottomEdge" x="22" y="268" image="main_bottom" action="move" lefttop="leftbottom" rightbottom="rightbottom"/>
+        <Image id="RB" x="430" y="268" image="main_bottom_right" action="resizeSE" lefttop="rightbottom" rightbottom="rightbottom"/>
+        <Video id="video" x="4" y="14" width="439" height="254" rightbottom="rightbottom"/>
+        <Image id="backVideo" x="4" y="14" image="main_backVideo" action="move" resize="scale" rightbottom="rightbottom"/>
+        <Button up="main_top_left" down="main_top_left_down" action="vlc.quit()" id="bClose" tooltiptext="Quit VLC"/>
+        <Button up="main_bMax" down="main_bMax_down" action="vlc.fullscreen()" id="bMax" x="401" lefttop="righttop" rightbottom="righttop" tooltiptext="Fullscreen"/>
+        <Button up="main_bMin" down="main_bMin_down" action="vlc.minimize()" id="bMin" x="376" lefttop="righttop" rightbottom="righttop" tooltiptext="Minimize"/>
+        <Button up="main_binfo" down="main_binfo_down" action="About.show()" id="bInfo" x="353" lefttop="righttop" rightbottom="righttop" tooltiptext="About Skin"/>
+        <Button up="main_bAot" down="main_bAot_down" action="vlc.onTop()" id="bAlwaysTopOn" x="424" lefttop="righttop" rightbottom="righttop" visible="not vlc.isOnTop" tooltiptext="Enable Always On Top"/>
+        <Button up="main_bAot" down="main_bAot_down" action="vlc.onTop()" id="bDisableAlwaysTopOn" x="424" lefttop="righttop" rightbottom="righttop" visible="vlc.isOnTop" tooltiptext="Disable Always On Top"/>
+        <Checkbox state="vlc.isPlaying" up1="main_btn_play" up2="main_btn_pause" action1="vlc.play()" action2="vlc.pause()" tooltiptext1="Play" tooltiptext2="Pause" id="bPlayPause" x="6" y="271" lefttop="leftbottom" rightbottom="leftbottom"/>
+        <Checkbox state="vlc.isPlaying" up1="main_btn_open" up2="main_btn_stop" action1="dialogs.fileSimple()" action2="vlc.stop()" tooltiptext1="Open" tooltiptext2="Stop" id="bOpen" x="22" y="271" lefttop="leftbottom" rightbottom="leftbottom"/>
+        <Slider id="Slider" x="314" y="276" points="(0,0),(110,0)" thickness="0" value="time" tooltiptext="Time: $T" up="main_sld_time" lefttop="leftbottom" rightbottom="rightbottom" visible="vlc.isSeekable">
+          <SliderBackground id="SliderBackground" image="main_sld_time_back" padhoriz="1" padvert="1"/>
+        </Slider>
+        <Text text="$T / $D" font="topaz" alignment="center" id="tTime" x="192" y="271" width="110" lefttop="leftbottom" rightbottom="leftbottom" visible="vlc.isSeekable"/>
+        <Text text="Amiga VLC Player" font="topaz" id="Title" x="27" y="2" width="120"/>
+        <Text text="$N" font="topaz" alignment="center" id="Filename" x="88" y="271" width="100" lefttop="leftbottom" rightbottom="leftbottom"/>
+        <Image id="separe1" x="188" y="268" image="main_separe" lefttop="leftbottom" rightbottom="leftbottom" visible="vlc.isSeekable"/>
+        <Image id="separe2" x="305" y="268" image="main_separe" lefttop="leftbottom" rightbottom="leftbottom" visible="vlc.isSeekable"/>
+        <Image id="separe0" x="88" y="268" image="main_separe" lefttop="leftbottom" rightbottom="leftbottom" visible="vlc.isSeekable"/>
+        <Image id="volume" x="37" y="271" image="main_volume" lefttop="leftbottom" rightbottom="leftbottom"/>
+        <Slider id="volumeslider" x="51" y="276" points="(0,0),(33,0)" thickness="0" value="volume" tooltiptext="Volume: $V%" up="main_sld_time" lefttop="leftbottom" rightbottom="leftbottom">
+          <SliderBackground id="volumeslider" image="main_sld_volume_back" padhoriz="1" padvert="1"/>
+        </Slider>
+      </Group>
+    </Layout>
+  </Window>
+  <Window id="About" visible="false" x="200" y="200">
+    <Layout id="AboutWin" width="250" height="134">
+      <Image id="base" image="main_about" action="move"/>
+      <Button up="main_bOk" down="main_bOk_down" action="About.hide()" id="bOk" x="105" y="110"/>
+    </Layout>
+  </Window>
+
+</Theme>
